@@ -7,10 +7,16 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
+import java.util.List;
 import java.util.UUID;
 
 @FeignClient(name = "account-service", url = "${clients.account-service.url:}")
 public interface AccountRestClient {
+
+    @GetMapping("/accounts")
+    List<Account> getAccounts();
+
+
     @GetMapping("/accounts/{id}")
     Account getAccountById(@PathVariable UUID id);
 

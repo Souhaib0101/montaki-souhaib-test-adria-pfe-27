@@ -1,7 +1,7 @@
 package net.montaki.transactionservice.service;
 
 import jakarta.transaction.Transactional;
-import lombok.Value;
+import org.springframework.beans.factory.annotation.Value;
 import net.montaki.transactionservice.domain.Transaction;
 import net.montaki.transactionservice.model.Account;
 import net.montaki.transactionservice.repository.TransactionRepository;
